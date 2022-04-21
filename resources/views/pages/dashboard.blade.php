@@ -35,7 +35,10 @@
                                 <td>{{ $datas->tanggal }}</td>
                                 <td>{{ $datas->jam }}</td>
                                 <td>{{ $datas->suhu }}</td>
-                                <td>$320,800</td>
+                                <td>
+                                    <a type="button" class="btn btn-success" href="/dashboard/{{$datas->id}}">Edit</a>
+                                    <a type="button" class="btn btn-danger" href="/delete/{{$datas->id}}" data-id="{{$datas->id}}" data-lokasi="{{$datas->lokasi}}">Delete</a>
+                                </td>
                             </tr>
                             <?php $no++; ?>
                         @endforeach

@@ -49,7 +49,7 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="form">
+        <a class="nav-link" href="/form">
             <i class="fas fa-fw fa-table"></i>
             <span>Form Perjalanan</span></a>
     </li>

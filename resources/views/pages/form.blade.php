@@ -1,4 +1,11 @@
 @extends('layouts.master')
+@section('headline', 'Form Perjalanan')
+@section('comment',
+    'Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+    Molestias harum illo ut? Distinctio incidunt obcaecati esse molestiae, velit quod laudantium corrupti fugiat a doloribus
+    aliquam quaerat accusantium error non laboriosam illo et,
+    porro dolores quas aperiam amet.
+    Perferendis dolorum, fuga, quod asperiores ratione quaerat hic enim rerum debitis similique sit.',)
 @section('content')
     <form action="/formPost" method="POST" class="user">
         {{ csrf_field() }}
@@ -37,5 +44,6 @@
                     </div>
                 </div>
             </div>
+        </div>
     </form>
 @endsection

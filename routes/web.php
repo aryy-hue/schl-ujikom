@@ -13,20 +13,30 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',[UserController::class , 'login'])->name('login');
-Route::post('/loginPost',[UserController::class , 'loginPost']);
-Route::any('/logout',[UserController::class , 'logout']);
+
+Route::get('/', [UserController::class, 'login'])->name('login');
+Route::post('/loginPost', [UserController::class, 'loginPost']);
+Route::any('/logout', [UserController::class, 'logout']);
+
+Route::get('/register', [UserController::class, 'register'])->name('register');
+Route::post('/registerPost', [UserController::class, 'registerPost']);
+
+// Harus login/Register sebelum bisa masuk ke halaman Dashboard 
+Route::group(['middleware' => ['auth', 'Role:admin,user']], function () {
+    Route::get('/dashboard', [PerjalananController::class, 'index'])->name('dashboard');
+    // Menampilkan data berdasarkan ID
+    Route::get('/dashboard/{id}', [PerjalananController::class, 'tampilData'])->name('tampilData');
+    // Mengedit data dengan cara mengupdate
+    Route::post('/updateData/{id}', [PerjalananController::class, 'updateData'])->name('updateData');
+    Route::get('/delete/{id}', [PerjalananController::class, 'deleteData'])->name('deleteData');
 
 
-Route::get('/register',[UserController::class , 'register'])->name('register');
-Route::post('/registerPost',[UserController::class , 'registerPost']);
 
+    // Menampilkan data User
+    Route::get('/user', [UserController::class, 'index'])->name('userIndex');
 
-Route::group(['middleware' => ['auth','Role:admin,user']] , function (){
-    Route::get('/dashboard',[PerjalananController::class , 'index'])->name('dashboard');
-    Route::get('/user',[UserController::class , 'index'])->name('userIndex');
-
-    Route::get('/form',[PerjalananController::class , 'form'])->name('form');
-    Route::post('/formPost',[PerjalananController::class , 'formPost']);
-
+    // Menambahkan data perjalanan
+    Route::get('/form', [PerjalananController::class, 'form'])->name('form');
+    // Menambah data dengan method post
+    Route::post('/formPost', [PerjalananController::class, 'formPost']);
 });
