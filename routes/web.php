@@ -30,10 +30,11 @@ Route::group(['middleware' => ['auth', 'Role:admin,user']], function () {
     Route::post('/updateData/{id}', [PerjalananController::class, 'updateData'])->name('updateData');
     Route::get('/delete/{id}', [PerjalananController::class, 'deleteData'])->name('deleteData');
 
-
-
     // Menampilkan data User
     Route::get('/user', [UserController::class, 'index'])->name('userIndex');
+    // Menghapus Data User
+    Route::get('/deleteUser/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
+
 
     // Menambahkan data perjalanan
     Route::get('/form', [PerjalananController::class, 'form'])->name('form');

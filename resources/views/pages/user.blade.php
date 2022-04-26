@@ -33,7 +33,9 @@
                                 <td>{{ $datas->nama }}</td>
                                 <td>{{ bcrypt($datas->email) }}</td>
                                 <td>{{ $datas->role }}</td>
-                                <td>$320,800</td>
+                                <td>
+                                    <a type="button" class="btn btn-danger" href="/deleteUser/{{$datas->id}}">Delete</a>
+                                </td>
                             </tr>
                             <?php $no++; ?>
                         @endforeach

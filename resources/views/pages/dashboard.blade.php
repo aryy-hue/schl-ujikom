@@ -36,8 +36,8 @@
                                 <td>{{ $datas->jam }}</td>
                                 <td>{{ $datas->suhu }}</td>
                                 <td>
-                                    <a type="button" class="btn btn-success" href="/dashboard/{{$datas->id}}">Edit</a>
-                                    <a type="button" class="btn btn-danger" href="/delete/{{$datas->id}}" data-id="{{$datas->id}}" data-lokasi="{{$datas->lokasi}}">Delete</a>
+                                    <a type="button" class="btn btn-info btn-circle" href="/dashboard/{{$datas->id}}"><i class="fas fa-info-circle"></i></a>
+                                    <a type="button" class="btn btn-danger btn-circle" href="/delete/{{$datas->id}}" data-id="{{$datas->id}}" data-lokasi="{{$datas->lokasi}}"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
                             <?php $no++; ?>
