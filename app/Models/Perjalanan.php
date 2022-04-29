@@ -9,6 +9,5 @@ class Perjalanan extends Model
 {
     use HasFactory;
     protected $table = 'perjalanans';
-    protected $fillable = ['id_user' , 'tanggal', 'lokasi' , 'jam' , 'suhu'];
-
+    protected $fillable = ['id_user', 'tanggal', 'lokasi', 'jam', 'suhu'];
 }

@@ -1,11 +1,8 @@
 @extends('layouts.master')
+@section('title', 'Form Perjalanan')
 @section('headline', 'Form Perjalanan')
 @section('comment',
-    'Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-    Molestias harum illo ut? Distinctio incidunt obcaecati esse molestiae, velit quod laudantium corrupti fugiat a doloribus
-    aliquam quaerat accusantium error non laboriosam illo et,
-    porro dolores quas aperiam amet.
-    Perferendis dolorum, fuga, quod asperiores ratione quaerat hic enim rerum debitis similique sit.',)
+    'Ini adalah halaman form , untuk menambah data perjalananan',)
 @section('content')
     <form action="/formPost" method="POST" class="user">
         {{ csrf_field() }}

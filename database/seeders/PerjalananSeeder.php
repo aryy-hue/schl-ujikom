@@ -19,13 +19,13 @@ class PerjalananSeeder extends Seeder
     {
         $faker = Faker::create('id_ID');
 
-        for ($i = 1; $i <= 50; $i++){
+        for ($i = 1; $i <= 50; $i++) {
             DB::table('perjalanans')->insert([
-                'id_user'=> $faker->numberBetween(1,50),
-                'lokasi'=> $faker->city,
-                'tanggal'=> $faker->date,
-                'jam'=>$faker->time,
-                'suhu'=>$faker->numberBetween(30,50)
+                'id_user' => $faker->unique()->numberBetween(1, 50),
+                'lokasi' => $faker->city,
+                'tanggal' => $faker->date,
+                'jam' => $faker->time,
+                'suhu' => $faker->numberBetween(30, 50)
             ]);
         }
     }

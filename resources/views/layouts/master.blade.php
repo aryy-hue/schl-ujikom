@@ -9,8 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Tables</title>
+    <title>Perjalanan | @yield('title')</title>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
     <!-- Custom fonts for this template -->
     <link href="{{asset('../vendor/fontawesome-free/css/all.css')}}" rel="stylesheet" type="text/css">
     <link
@@ -20,6 +21,7 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('./css/sb-admin-2.css')}}" rel="stylesheet">
 
+   
     <!-- Custom styles for this page -->
     <link href="{{asset('../vendor/datatables/dataTables.bootstrap4.css')}}" rel="stylesheet">
 
@@ -114,6 +116,7 @@
     <!-- Custom scripts for all pages-->
     <script src="{{asset('js/sb-admin-2.js')}}"></script>
 
+    
     <!-- Page level plugins -->
     <script src="{{asset('vendor/datatables/jquery.dataTables.js')}}"></script>
     <script src="{{asset('vendor/datatables/dataTables.bootstrap4.js')}}"></script>
@@ -121,6 +124,7 @@
     <!-- Page level custom scripts -->
     <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>

@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('title', 'Data Perjalanan')
 @section('headline' , 'Data Perjalanan')
 @section('comment' , 'Disini kita bisa mengedit Data Perjalanan')
 @section('content')

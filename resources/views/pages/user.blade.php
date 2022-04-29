@@ -1,11 +1,8 @@
 @extends('layouts.master')
+@section('title', 'Data User')
 @section('headline', 'Data User')
 @section('comment',
-    'Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-    Molestias harum illo ut? Distinctio incidunt obcaecati esse molestiae, velit quod laudantium corrupti fugiat a doloribus
-    aliquam quaerat accusantium error non laboriosam illo et,
-    porro dolores quas aperiam amet.
-    Perferendis dolorum, fuga, quod asperiores ratione quaerat hic enim rerum debitis similique sit.',)
+    'Ini adalah halaman user . Disini kita sebagai admin bisa melihat data data user yang sudah terdaftar',)
 @section('content')
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -21,6 +18,7 @@
                             <th>Nama</th>
                             <th>Email</th>
                             <th>Role</th>
+                            {{-- <th>Total Data</th> --}}
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -33,6 +31,7 @@
                                 <td>{{ $datas->nama }}</td>
                                 <td>{{ bcrypt($datas->email) }}</td>
                                 <td>{{ $datas->role }}</td>
+                                {{-- <td>{{ $datas->count(Auth) }}</td> --}}
                                 <td>
                                     <a type="button" class="btn btn-danger" href="/deleteUser/{{$datas->id}}">Delete</a>
                                 </td>

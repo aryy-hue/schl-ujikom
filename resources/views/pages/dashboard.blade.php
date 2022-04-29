@@ -37,7 +37,7 @@
                                 <td>{{ $datas->suhu }}</td>
                                 <td>
                                     <a type="button" class="btn btn-info btn-circle" href="/dashboard/{{$datas->id}}"><i class="fas fa-info-circle"></i></a>
-                                    <a type="button" class="btn btn-danger btn-circle" href="/delete/{{$datas->id}}" data-id="{{$datas->id}}" data-lokasi="{{$datas->lokasi}}"><i class="fas fa-trash"></i></a>
+                                    <a type="button" class="btn btn-danger btn-circle" href="/delete/{{$datas->id}}" ><i class="fas fa-trash" ></i></a>
                                 </td>
                             </tr>
                             <?php $no++; ?>
@@ -45,6 +45,7 @@
                     </tbody>
                 </table>
             </div>
+            
             {{-- {{ $data->appends($_GET)->links() }} --}}
         </div>
     </div>

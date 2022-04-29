@@ -5,10 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Perjalanan;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redis;
 
 class PerjalananController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $data = Perjalanan::all();
@@ -21,7 +28,7 @@ class PerjalananController extends Controller
     public function formPost(Request $request)
     {
         $data = [
-            'id_user' => 1,
+            'id_user' => Auth::user()->id,
             'lokasi' => $request->lokasi,
             'tanggal' => $request->tanggal,
             'suhu' => $request->suhu,
