@@ -54,6 +54,10 @@ class UserController extends Controller
         } else {
         }
     }
+    public function profile()
+    {
+        return view('pages.user.profile');
+    }
 
     // Tahapan Login
     public function login()

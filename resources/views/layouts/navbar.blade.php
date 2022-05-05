@@ -17,14 +17,7 @@
             </div>
         </div>
     </form> --}}
-    <a class="button" onclick="history.back()">
-        <i class="fa fa-angle-left" style="font-size:36px; color: #4e73df">
-        </i>
-    </a>
-    <a class="button" onclick="history.forward()">
-        <i class="fa fa-angle-right" style="font-size:36px; color: #4e73df">
-        </i>
-    </a>
+  
     
     
 
@@ -63,7 +56,7 @@
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 @if (auth()->user()->role == 'user')
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="/user/tampil_profile">
                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                         Profile
                     </a>

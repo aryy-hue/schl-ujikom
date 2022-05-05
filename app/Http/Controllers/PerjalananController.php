@@ -8,6 +8,8 @@ use App\Models\Perjalanan;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redis;
+// use Barryvdh\DomPDF\PDF;
+use PDF;
 
 class PerjalananController extends Controller
 {
@@ -56,5 +58,13 @@ class PerjalananController extends Controller
         $data->delete();
 
         return redirect('/dashboard');
+    }
+    // PRINT DATA PDF PERJALANAN
+    public function print_pdf()
+    {
+        $data = Perjalanan::all();
+
+        $pdf = PDF::loadview('pages.print_pdf',  compact('data'));
+        return $pdf->download('laporan-perjalanan.pdf');
     }
 }

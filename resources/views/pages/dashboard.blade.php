@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('headline', 'Data Table Perjalananan')
+@section('title', 'Data Perjalananan')
 @section('comment',
     'Lorem ipsum dolor sit, amet consectetur adipisicing elit.
     Molestias harum illo ut? Distinctio incidunt obcaecati esse molestiae, velit quod laudantium corrupti fugiat a doloribus
@@ -44,8 +45,8 @@
                         @endforeach
                     </tbody>
                 </table>
+                <a href="/cetak_PDF" class="btn btn-primary" target="_blank">CETAK PDF</a>
             </div>
-            
             {{-- {{ $data->appends($_GET)->links() }} --}}
         </div>
     </div>

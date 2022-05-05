@@ -8,7 +8,7 @@
         <h6 class="m-0 font-weight-bold text-primary">Edit Data</h6>
     </div>
     <div class="card-body">
-        <form method="POST" action="/updateData/{{$data->id}}">
+        <form method="POST" action="/updateData/{{$data->id}}" class="user">
         {{ csrf_field() }}
             <div class="mb-3">
               <label for="lokasi" class="form-label">Lokasi</label>

@@ -29,12 +29,19 @@ Route::group(['middleware' => ['auth', 'Role:admin,user']], function () {
     // Mengedit data dengan cara mengupdate
     Route::post('/updateData/{id}', [PerjalananController::class, 'updateData'])->name('updateData');
     Route::get('/delete/{id}', [PerjalananController::class, 'deleteData'])->name('deleteData');
+    // PRINT DATA PDF PERJALANAN
+    Route::get('/cetak_PDF', [PerjalananController::class, 'print_PDF'])->name('print_PDF');
+
+
 
     // Menampilkan data User
     Route::get('/user', [UserController::class, 'index'])->name('userIndex');
     // Menghapus Data User
     Route::get('/deleteUser/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
 
+
+    Route::get('/user/tampil_profile', [UserController::class, 'profile'])->name('profile');
+    Route::get('/user/profile', [UserController::class, 'editProfile'])->name('editProfile');
 
     // Menambahkan data perjalanan
     Route::get('/form', [PerjalananController::class, 'form'])->name('form');
