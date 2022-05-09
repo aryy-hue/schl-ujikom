@@ -16,9 +16,9 @@
                         <tr>
                             <th>No</th>
                             <th>Nama</th>
+                            <th>Country</th>
                             <th>Email</th>
                             <th>Role</th>
-                            {{-- <th>Total Data</th> --}}
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -29,9 +29,9 @@
                             <tr>
                                 <td>{{ $no }}</td>
                                 <td>{{ $datas->nama }}</td>
+                                <td>{{ $datas->negara }}</td>
                                 <td>{{ bcrypt($datas->email) }}</td>
                                 <td>{{ $datas->role }}</td>
-                                {{-- <td>{{ $datas->count(Auth) }}</td> --}}
                                 <td>
                                     <a type="button" class="btn btn-danger" href="/deleteUser/{{$datas->id}}">Delete</a>
                                 </td>

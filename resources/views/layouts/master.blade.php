@@ -21,7 +21,7 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('./css/sb-admin-2.css')}}" rel="stylesheet">
 
-   
+    {{-- <link href="{{ asset('./css/profile.css')}}" rel="stylesheet"  > --}}
     <!-- Custom styles for this page -->
     <link href="{{asset('../vendor/datatables/dataTables.bootstrap4.css')}}" rel="stylesheet">
 

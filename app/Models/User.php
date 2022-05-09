@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
 
     /**
      * The attributes that are mass assignable.
@@ -22,11 +22,18 @@ class User extends Authenticatable
     protected $fillable = [
         'nama',
         'nik',
+        'negara',
+        'img',
         'role',
         'email',
         'password',
     ];
+    protected $guarded = [];
 
+    public function data()
+    {
+        return $this->hasMany(Perjalanan::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

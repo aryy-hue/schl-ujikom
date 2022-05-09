@@ -9,7 +9,7 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    // Menampilkan DataData Users dan Admin
+    // Menampilkan DataData Users untuk Admin
     public function index()
     {
         $users = User::all();
@@ -35,9 +35,10 @@ class UserController extends Controller
         $data = [
             'nama' => $request->nama,
             'nik' => $request->nik,
+            'negara' => $request->negara,
             'role' => 'user',
             'email' => $request->nik,
-            'password' => bcrypt($request->nik)
+            'password' => bcrypt($request->nik) //Meng-bcrypt password supaya tidak terlihat
         ];
         // dd($data);
         user::create($data);
@@ -46,18 +47,42 @@ class UserController extends Controller
 
     public function deleteUser($id)
     {
-        if (auth()->user()->role == 'user') {
+        if (auth()->user()->role == 'admin') {
             $data = User::find($id);
             $data->delete();
 
-            return redirect('/user');
+            return redirect('/dashboard');
+        } elseif (auth()->user()->role == 'user') {
+            $data = User::find($id)->delete();
+
+            return redirect('/');
         } else {
+            dd($id);
         }
     }
     public function profile()
     {
         return view('pages.user.profile');
     }
+
+    public function editProfile($id)
+    {
+        $data = User::find($id);
+        return view('pages.user.edit_profile');
+    }
+
+    public function updateData(Request $request, $id)
+    {
+        $data = User::find($id);
+        $data->update($request->all());
+        if ($request->hasFile('img')) {
+            $request->file('img')->move('img/', $request->file('img')->getClientOriginalName());
+            $data->img = $request->file('img')->getClientOriginalName();
+            $data->update();
+        }
+        return redirect('/dashboard');
+    }
+
 
     // Tahapan Login
     public function login()

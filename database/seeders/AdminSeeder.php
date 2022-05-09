@@ -18,6 +18,8 @@ class AdminSeeder extends Seeder
         DB::table('users')->insert([
             'nama' => 'admin',
             'nik' => 'admin',
+            'negara' => 'indonesia',
+            'img' => 'img/user.png',
             'role' => 'admin',
             'email' => 'admin',
             'password' => bcrypt('admin')

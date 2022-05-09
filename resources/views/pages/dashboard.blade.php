@@ -2,11 +2,7 @@
 @section('headline', 'Data Table Perjalananan')
 @section('title', 'Data Perjalananan')
 @section('comment',
-    'Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-    Molestias harum illo ut? Distinctio incidunt obcaecati esse molestiae, velit quod laudantium corrupti fugiat a doloribus
-    aliquam quaerat accusantium error non laboriosam illo et,
-    porro dolores quas aperiam amet.
-    Perferendis dolorum, fuga, quod asperiores ratione quaerat hic enim rerum debitis similique sit.',)
+    'Tampilan data perjalanan')
 @section('content')
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -30,7 +26,7 @@
                     <tbody>
                         <?php $no = 1; ?>
                         @foreach ($data as $datas)
-                            <tr>
+                        <tr>
                                 <td>{{ $no }}</td>
                                 <td>{{ $datas->lokasi }}</td>
                                 <td>{{ $datas->tanggal }}</td>

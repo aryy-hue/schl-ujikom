@@ -38,7 +38,7 @@ class PerjalananController extends Controller
         ];
         // dd($data);
         Perjalanan::create($data);
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('success', 'Data Berhasil Ditambahkan');
     }
     public function tampilData($id)
     {
@@ -57,7 +57,7 @@ class PerjalananController extends Controller
         $data = Perjalanan::find($id);
         $data->delete();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('success', 'Data Berhasil DiUbah');
     }
     // PRINT DATA PDF PERJALANAN
     public function print_pdf()

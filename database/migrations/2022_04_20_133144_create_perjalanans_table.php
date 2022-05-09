@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('perjalanans', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_user');
+            $table->bigInteger('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->string('lokasi');
             $table->date('tanggal');
             $table->time('jam');

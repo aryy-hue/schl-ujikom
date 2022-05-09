@@ -41,11 +41,15 @@
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user" id="nama" name="nama"
                                         placeholder="Masukan nama...">
-                                </div>
+                                    </div>
 
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user" id="nik" name="nik"
                                         placeholder="Masukan NIK...">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="negara" name="negara"
+                                        placeholder="Masukan Negara...">
                                 </div>
 
                                 <button class="btn btn-primary btn-user btn-block">

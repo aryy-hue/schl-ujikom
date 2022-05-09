@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PerjalananController;
 use App\Http\Controllers\UserController;
+use App\Models\User;
+use App\Models\Perjalanan;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,15 +35,17 @@ Route::group(['middleware' => ['auth', 'Role:admin,user']], function () {
     Route::get('/cetak_PDF', [PerjalananController::class, 'print_PDF'])->name('print_PDF');
 
 
-
     // Menampilkan data User
     Route::get('/user', [UserController::class, 'index'])->name('userIndex');
     // Menghapus Data User
     Route::get('/deleteUser/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
 
 
-    Route::get('/user/tampil_profile', [UserController::class, 'profile'])->name('profile');
-    Route::get('/user/profile', [UserController::class, 'editProfile'])->name('editProfile');
+    // Menampilkan,mengedit, menghapus data user sebagai user
+    Route::get('/user/profile', [UserController::class, 'profile'])->name('profile');
+    Route::get('/user/profile/{id}', [UserController::class, 'editProfile']);
+    Route::post('/user/profile/updateData/{id}', [UserController::class, 'updateData']);
+
 
     // Menambahkan data perjalanan
     Route::get('/form', [PerjalananController::class, 'form'])->name('form');
