@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Crypt;
 
 class UserController extends Controller
 {
@@ -44,7 +46,7 @@ class UserController extends Controller
         user::create($data);
         return redirect('/');
     }
-
+    // menghapus data dengan mencari id sebagai primary key
     public function deleteUser($id)
     {
         if (auth()->user()->role == 'admin') {
@@ -60,17 +62,18 @@ class UserController extends Controller
             dd($id);
         }
     }
+    // menampilkan view.profile 
     public function profile()
     {
         return view('pages.user.profile');
     }
-
+    // mengambil data sesuai id
     public function editProfile($id)
     {
         $data = User::find($id);
         return view('pages.user.edit_profile');
     }
-
+    // mengupdate data 
     public function updateData(Request $request, $id)
     {
         $data = User::find($id);
@@ -89,6 +92,7 @@ class UserController extends Controller
     {
         return view('auth.login');
     }
+    // Tahapan PostLogin
     public function loginPost(Request $request)
     {
         if (Auth::attempt($request->only('nama', 'email', 'password'))) {
@@ -96,6 +100,7 @@ class UserController extends Controller
         }
         return redirect('/');
     }
+    // Tahapan LogOut
     public function logout()
     {
         Auth::logout();

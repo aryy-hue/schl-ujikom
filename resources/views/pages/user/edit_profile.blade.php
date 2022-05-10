@@ -38,6 +38,16 @@
                     <label for="lastname">Negara</label>
                     <input type="text" class="bg-light form-control" id="negara" name="negara" value="{{ auth()->user()->negara }}">
                 </div>
+                <div class="col-md-6 pt-md-0 pt-3">
+                    <label for="lastname">Email</label>
+                    <input type="text" class="bg-light form-control" id="email" name="email" value="{{ auth()->user()->email }}">
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-md-6 pt-md-0 pt-3">
+                    <label for="lastname">Password</label>
+                    <input type="password" class="bg-light form-control" id="password" name="password" value="{{ auth()->user()->password }}">
+                </div>
             </div>
             <div class="py-3 pb-4 border-bottom">
                 <button class="btn btn-primary mr-3">Save Changes</button>

@@ -17,16 +17,18 @@ class PerjalananController extends Controller
     {
         $this->middleware('auth');
     }
-
+    // menampilkan semua data yang ada di model perjalanan
     public function index()
     {
         $data = Perjalanan::all();
         return view('pages.dashboard', compact('data'));
     }
+    // menampilkan halaman form
     public function form()
     {
         return view('pages.form');
     }
+    // menambahkan fungsi post untuk meRequest data agar masuk ke database
     public function formPost(Request $request)
     {
         $data = [
@@ -40,11 +42,13 @@ class PerjalananController extends Controller
         Perjalanan::create($data);
         return redirect('/dashboard')->with('success', 'Data Berhasil Ditambahkan');
     }
+    // menampilkan data sesuai $id yang ada di data perjalanan
     public function tampilData($id)
     {
         $data = Perjalanan::find($id);
         return view('pages.tampildata', compact('data'));
     }
+    //mengupdate data dengan mengrequest $Id
     public function updateData(Request $request, $id)
     {
         $data = Perjalanan::find($id);
@@ -52,6 +56,7 @@ class PerjalananController extends Controller
 
         return redirect('/dashboard');
     }
+    // mencari Id lalu mendelete data tersebut
     public function deleteData($id)
     {
         $data = Perjalanan::find($id);
