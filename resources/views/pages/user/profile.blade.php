@@ -18,7 +18,7 @@
               <h4 class="mb-2">{{ auth()->user()->nama }}</h4>
               <p class="text-muted mb-4">{{ auth()->user()->negara }} <span class="mx-2">|</span> 
                   {{ auth()->user()->nik }}</p>
-              <a href="/user/profile/edit" type="button" class="btn btn-primary btn-rounded btn-lg">
+              <a href="/user/profile/edit" type="button" class="btn btn-sec btn-rounded btn-lg">
                 Edit Data
               </a>
              

@@ -36,7 +36,7 @@
                                         name="suhu">
                                 </div>
                             </div>
-                            <button class="btn btn-primary btn-user btn-block">Daftar</button>
+                            <button class="btn btn-sec btn-user btn-block">Daftar</button>
                         </div>
                     </div>
                 </div>

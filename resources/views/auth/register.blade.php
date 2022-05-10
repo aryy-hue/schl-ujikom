@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-sec">
 
     <div class="container">
 
@@ -52,7 +52,7 @@
                                         placeholder="Masukan Negara...">
                                 </div>
 
-                                <button class="btn btn-primary btn-user btn-block">
+                                <button class="btn btn-sec btn-user btn-block">
                                     Register Account
                                 </button>
 

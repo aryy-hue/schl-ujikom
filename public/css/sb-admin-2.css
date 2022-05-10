@@ -25,6 +25,7 @@
   --gray: #858796;
   --gray-dark: #5a5c69;
   --primary: #4e73df;
+  --sec: #C9FDD7;
   --secondary: #858796;
   --success: #1cc88a;
   --info: #36b9cc;
@@ -40,6 +41,7 @@
   --font-family-sans-serif: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 *,
 *::before,
@@ -159,13 +161,13 @@ sup {
 }
 
 a {
-  color: #4e73df;
+  color: #1A3C40;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #224abe;
+  color: #417D7A;
   text-decoration: underline;
 }
 
@@ -2366,6 +2368,21 @@ fieldset:disabled a.btn {
   background-color: #2e59d9;
   border-color: #2653d4;
 }
+.btn-sec {
+  color: #fff;
+  background-color: #417D7A;
+  border-color: #417D7A;
+}
+.btn-sec:hover {
+  color: #fff;
+  background-color: #1D5C63;
+  border-color: #1D5C63;
+}
+.btn-prof {
+  color: #fff;
+  background-color: #EDE6DB;
+  border-color: #EDE6DB;
+}
 
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
@@ -3207,7 +3224,7 @@ input[type="button"].btn-block {
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #4e73df;
+  background-color: #417D7A;
 }
 
 .dropdown-item.disabled, .dropdown-item:disabled {
@@ -4762,14 +4779,14 @@ input[type="button"].btn-block {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #4e73df;
+  color: #417D7A;
   background-color: #fff;
   border: 1px solid #dddfeb;
 }
 
 .page-link:hover {
   z-index: 2;
-  color: #224abe;
+  color: #1A3C40;
   text-decoration: none;
   background-color: #eaecf4;
   border-color: #dddfeb;
@@ -4778,7 +4795,7 @@ input[type="button"].btn-block {
 .page-link:focus {
   z-index: 3;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+  box-shadow: 0 0 0 0.2rem rgb(65, 125, 122 , 0.25);
 }
 
 .page-item:first-child .page-link {
@@ -4795,8 +4812,8 @@ input[type="button"].btn-block {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #4e73df;
-  border-color: #4e73df;
+  background-color: #1D5C63;
+  border-color: #417D7A;
 }
 
 .page-item.disabled .page-link {
@@ -9607,6 +9624,10 @@ a.text-secondary:hover, a.text-secondary:focus {
   color: #60616f !important;
 }
 
+.text-sec {
+  color: #417D7A !important;
+}
+
 .text-success {
   color: #1cc88a !important;
 }
@@ -9902,6 +9923,11 @@ a:focus {
 .bg-gradient-primary {
   background-color: #4e73df;
   background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+  background-size: cover;
+}
+.bg-gradient-sec {
+  background-color: #417D7A;
+  /* background-image: linear-gradient(1000deg, #6892D5 5%, #224abe 100%); */
   background-size: cover;
 }
 

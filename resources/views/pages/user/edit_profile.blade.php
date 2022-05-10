@@ -6,7 +6,7 @@
 <link href="{{ asset('./css/profile.css')}}" rel="stylesheet"  >
 <form action="/user/profile/updateData/{{ auth()->user()->id}}" method="POST" enctype="multipart/form-data">
     @csrf
-    <div class="wrapper bg-white mt-sm-5">
+    <div class="wrapper bg-white mt-sm-5 mb-sm-5">
         <h4 class="pb-4 border-bottom">Account settings</h4>
         <div class="d-flex align-items-start py-3 border-bottom">
             <img src="{{asset('img/'.Auth::user()->img)}}" class="img" alt="">
@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-md-6 pt-md-0 pt-3">
                     <label for="lastname">NIK</label>
-                    <input type="text" class="bg-light form-control" id="nik" name="nik"  value="{{ auth()->user()->nik }}">
+                    <input type="text" class="bg-light form-control" id="nik" name="nik"  value="{{ auth()->user()->nik }}" disabled>
                 </div>
             </div>
             <div class="row py-2">
@@ -40,17 +40,17 @@
                 </div>
                 <div class="col-md-6 pt-md-0 pt-3">
                     <label for="lastname">Email</label>
-                    <input type="text" class="bg-light form-control" id="email" name="email" value="{{ auth()->user()->email }}">
+                    <input type="text" class="bg-light form-control" id="email" name="email" value="{{ auth()->user()->email }}" >
                 </div>
             </div>
-            <div class="row py-2">
+            {{-- <div class="row py-2">
                 <div class="col-md-6 pt-md-0 pt-3">
                     <label for="lastname">Password</label>
                     <input type="password" class="bg-light form-control" id="password" name="password" value="{{ auth()->user()->password }}">
                 </div>
-            </div>
+            </div> --}}
             <div class="py-3 pb-4 border-bottom">
-                <button class="btn btn-primary mr-3">Save Changes</button>
+                <button class="btn btn-sec mr-3">Save Changes</button>
                 <a href="/user/profile"class="btn border button">Cancel</a>
             </div>
         <div class="d-sm-flex align-items-center pt-3" id="deactivate">

@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-sec">
 
     <div class="container">
 
@@ -58,7 +58,7 @@
                                                 name="password" placeholder="Password">
                                         </div>
 
-                                        <button class="btn btn-primary btn-user btn-block">
+                                        <button class="btn btn-sec btn-user btn-block">
                                             Login
                                         </button>
 

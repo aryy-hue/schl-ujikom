@@ -5,7 +5,7 @@
 @section('content')
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Edit Data</h6>
+        <h6 class="m-0 font-weight-bold text-sec">Edit Data</h6>
     </div>
     <div class="card-body">
         <form method="POST" action="/updateData/{{$data->id}}" class="user">
@@ -27,7 +27,7 @@
               <input value="{{$data->suhu}}" name="suhu" type="suhu" class="form-control" id="suhu" aria-describedby="emailHelp">
             </div>
             
-            <button type="submit" class="btn btn-warning">Submit</button>
+            <button type="submit" class="btn btn-sec">Submit</button>
           </form>
 </div>
 @endsection
