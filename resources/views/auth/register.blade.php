@@ -40,16 +40,24 @@
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user" id="nama" name="nama"
-                                        placeholder="Masukan nama...">
+                                        placeholder="Masukan nama..." required>
                                     </div>
+                                    
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user" id="nik" name="nik"
+                                        placeholder="Masukan NIK..." required>
+                                    </div>
+                                    @if ($errors->has('nik'))
+                                    <div class="alert alert-warning  fade show" role="alert">
+                                        <span class="alert-text" aria-label="close"><strong>Warning!
+                                            </strong>{{ $errors->first('nik') }}</span>
+                                        <span>
 
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="nik" name="nik"
-                                        placeholder="Masukan NIK...">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="negara" name="negara"
-                                        placeholder="Masukan Negara...">
+                                    </div>
+                                      @endif
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user" id="negara" name="negara"
+                                        placeholder="Masukan Negara..." required>
                                 </div>
 
                                 <button class="btn btn-sec btn-user btn-block">

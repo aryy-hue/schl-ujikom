@@ -54,7 +54,7 @@ class PerjalananController extends Controller
         $data = Perjalanan::find($id);
         $data->update($request->all());
 
-        return redirect('/dashboard');
+        return redirect('/dashboard')->with('info', 'Data Berhasil Di Edit');
     }
     // mencari Id lalu mendelete data tersebut
     public function deleteData($id)
@@ -62,7 +62,7 @@ class PerjalananController extends Controller
         $data = Perjalanan::find($id);
         $data->delete();
 
-        return redirect('/dashboard')->with('success', 'Data Berhasil DiUbah');
+        return redirect('/dashboard')->with('danger', 'Data Berhasil Di Hapus');
     }
     // PRINT DATA PDF PERJALANAN
     public function print_pdf()

@@ -33,7 +33,7 @@
                                 <td>{{ bcrypt($datas->email) }}</td>
                                 <td>{{ $datas->role }}</td>
                                 <td>
-                                    <a type="button" class="btn btn-danger" href="/deleteUser/{{$datas->id}}">Delete</a>
+                                    <a class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data {{ $datas->nama }} dengan ID {{ $datas->id }}')" href="/deleteUser/{{$datas->id}}">Delete</a>
                                 </td>
                             </tr>
                             <?php $no++; ?>

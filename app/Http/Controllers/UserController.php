@@ -30,7 +30,6 @@ class UserController extends Controller
                 'nik' => 'required|unique:users,email'
             ],
             [
-                'nama.unique' => 'Nama sudah terdaftar',
                 'nik.unique' => 'NIK sudah terdaftar'
             ]
         );

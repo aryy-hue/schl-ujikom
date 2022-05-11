@@ -17,7 +17,7 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
+        <link rel = "icon" href ="{{asset('./img/logo.png')}}" type = "image/x-icon">
     <!-- Custom styles for this template -->
     <link href="{{ asset('./css/sb-admin-2.css')}}" rel="stylesheet">
 
@@ -48,7 +48,22 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
+                    @if($message = Session::get('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{$message}}
+                      </div>
+                    @endif
+                    @if($message = Session::get('danger'))
+                    <div class="alert alert-danger" role="alert">
+                        {{$message}}
+                      </div>
+                    @endif
+                    @if($message = Session::get('info'))
+                    <div class="alert alert-info" role="alert">
+                        {{$message}}
+                      </div>
+                    @endif
+                    
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-sec">@yield('headline')</h6>

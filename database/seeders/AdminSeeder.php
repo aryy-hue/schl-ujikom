@@ -19,7 +19,7 @@ class AdminSeeder extends Seeder
             'nama' => 'admin',
             'nik' => 'admin',
             'negara' => 'indonesia',
-            'img' => 'img/user.png',
+            'img' => 'user.png',
             'role' => 'admin',
             'email' => 'admin',
             'password' => bcrypt('admin')

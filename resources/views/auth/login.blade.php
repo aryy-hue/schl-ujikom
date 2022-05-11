@@ -46,16 +46,16 @@
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user" id="nama"
                                                 aria-describedby="emailHelp" name="nama"
-                                                placeholder="Masukan nama anda...">
+                                                placeholder="Masukan nama anda..." required>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user" id="nik"
                                                 aria-describedby="emailHelp" name="nik"
-                                                placeholder="Enter Email Address...">
+                                                placeholder="Enter Email Address..." required>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" id="password"
-                                                name="password" placeholder="Password">
+                                                name="password" placeholder="Password" required>
                                         </div>
 
                                         <button class="btn btn-sec btn-user btn-block">
