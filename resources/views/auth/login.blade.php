@@ -41,21 +41,61 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user" method="POST" action="/loginPost">
+                                    @if ($message = Session::get('register'))
+                                        <div class="alert alert-success" role="alert">
+                                            {{ $message }}
+                                            <button type="button" class="close" data-dismiss="alert"
+                                                aria-label="Close"><span>&times;</span></button>
+                                        </div>
+                                    @endif
+                                    <form class="user needs-validation" method="POST" action="/loginPost">
                                         {{ csrf_field() }}
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user" id="nama"
-                                                aria-describedby="emailHelp" name="nama"
-                                                placeholder="Masukan nama anda..." required>
+                                                aria-describedby="nama" name="nama" placeholder="Masukan nama anda..."
+                                                required autofocus>
+                                            @if ($errors->has('nama'))
+                                                <div class="alert alert-warning alert-dismissible fade show"
+                                                    role="alert">
+                                                    <span class="alert-text"><strong>Warning!</strong>
+                                                        {{ $errors->first('nama') }}</span>
+                                                    </button>
+                                                </div>
+                                            @endif
+                                            <div class="invalid-feedback">
+                                                Please fill in your name
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user" id="nik"
                                                 aria-describedby="emailHelp" name="nik"
-                                                placeholder="Enter Email Address..." required>
+                                                placeholder="Isi NIK atau dengan Email...." required>
+                                            @if ($errors->has('nik'))
+                                                <div class="alert alert-warning alert-dismissible fade show"
+                                                    role="alert">
+                                                    <span class="alert-text"><strong>Warning!</strong>
+                                                        {{ $errors->first('nik') }}</span>
+                                                    </button>
+                                                </div>
+                                            @endif
+                                            <div class="invalid-feedback">
+                                                Please fill in your email
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" id="password"
                                                 name="password" placeholder="Password" required>
+                                            @if ($errors->has('password'))
+                                                <div class="alert alert-warning alert-dismissible fade show"
+                                                    role="alert">
+                                                    <span class="alert-text"><strong>Warning!</strong>
+                                                        {{ $errors->first('password') }}</span>
+                                                    </button>
+                                                </div>
+                                            @endif
+                                            <div class="invalid-feedback">
+                                                Please fill in your password
+                                            </div>
                                         </div>
 
                                         <button class="btn btn-sec btn-user btn-block">

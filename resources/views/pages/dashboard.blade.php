@@ -1,8 +1,7 @@
 @extends('layouts.master')
 @section('headline', 'Data Table Perjalananan')
 @section('title', 'Data Perjalananan')
-@section('comment',
-    'Tampilan data perjalanan')
+@section('comment', 'Tampilan data perjalanan')
 @section('content')
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -15,6 +14,7 @@
                     <thead>
                         <tr>
                             <th>No</th>
+                            {{-- menambahkan data tergantung user yang admin tambahkan --}}
                             <th>Lokasi</th>
                             <th>Tanggal</th>
                             <th>Jam</th>
@@ -26,15 +26,19 @@
                     <tbody>
                         <?php $no = 1; ?>
                         @foreach ($data as $datas)
-                        <tr>
+                            <tr>
                                 <td>{{ $no }}</td>
+                                {{-- menambahkan data tergantung user yang admin tambahkan --}}
                                 <td>{{ $datas->lokasi }}</td>
                                 <td>{{ $datas->tanggal }}</td>
                                 <td>{{ $datas->jam }}</td>
                                 <td>{{ $datas->suhu }}</td>
                                 <td>
-                                    <a type="button" class="btn btn-info btn-circle" href="/dashboard/{{$datas->id}}"><i class="fas fa-info-circle"></i></a>
-                                    <a class="btn btn-circle btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data {{ $datas->lokasi }}')" href="/delete/{{$datas->id}}"><i class="fa fa-trash"></i></a>
+                                    <a type="button" class="btn btn-info btn-circle" href="/dashboard/{{ $datas->id }}"><i
+                                            class="fas fa-info-circle"></i></a>
+                                    <a class="btn btn-circle btn-danger"
+                                        onclick="return confirm('Apakah anda yakin ingin menghapus data {{ $datas->lokasi }}')"
+                                        href="/delete/{{ $datas->id }}"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                             <?php $no++; ?>
@@ -44,6 +48,6 @@
                 <a href="/cetak_PDF" class="btn btn-sec" target="_blank">CETAK PDF</a>
             </div>
         </div>
-        </div>
+    </div>
     </div>
 @endsection

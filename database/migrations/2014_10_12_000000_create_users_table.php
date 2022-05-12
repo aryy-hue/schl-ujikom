@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('negara');
             $table->string('nik');
             $table->enum('role', ['admin', 'user'])->default('user');
-            $table->string('email')->unique();
+            $table->string('email')->unique(); //ubah ke string
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

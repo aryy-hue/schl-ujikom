@@ -25,7 +25,7 @@ class PerjalananSeeder extends Seeder
                 'lokasi' => $faker->city,
                 'tanggal' => $faker->date,
                 'jam' => $faker->time,
-                'suhu' => $faker->numberBetween(30, 50)
+                'suhu' => $faker->numberBetween(30, 37)
             ]);
         }
     }

@@ -43,7 +43,7 @@ class UserController extends Controller
         ];
         // dd($data);
         user::create($data);
-        return redirect('/');
+        return redirect('/')->with('register', 'Register Behasil Dilakukan!');
     }
     // menghapus data dengan mencari id sebagai primary key
     public function deleteUser($id)
@@ -61,7 +61,7 @@ class UserController extends Controller
             dd($id);
         }
     }
-    // menampilkan view.profile 
+    // menampilkan view.profile
     public function profile()
     {
         return view('pages.user.profile');
@@ -72,7 +72,7 @@ class UserController extends Controller
         $data = User::find($id);
         return view('pages.user.edit_profile');
     }
-    // mengupdate data 
+    // mengupdate data
     public function updateData(Request $request, $id)
     {
         $data = User::find($id);
@@ -94,10 +94,29 @@ class UserController extends Controller
     // Tahapan PostLogin
     public function loginPost(Request $request)
     {
+        $request->validate(
+            [
+                'nama' => 'required',
+                'nik' => 'required',
+                'password' => 'required'
+
+            ],
+            [
+                'nama.required' => 'tidak boleh kosong',
+                'nik.required' => 'tidak boleh kosong',
+                'password.required' => 'tidak boleh kosong'
+
+            ]
+        );
         if (Auth::attempt($request->only('nama', 'email', 'password'))) {
-            return redirect('/dashboard');
+            return redirect('/dashboard')->with('login', 'Anda Berhasil Login!');
         }
         return redirect('/');
+        return redirect()->back()->withInput()->withErrors([
+            'nama' => 'nama salah',
+            'nik' => 'nik salah',
+            'password' => 'password salah'
+        ]);
     }
     // Tahapan LogOut
     public function logout()

@@ -11,19 +11,20 @@
 
     <title>Perjalanan | @yield('title')</title>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
     <!-- Custom fonts for this template -->
-    <link href="{{asset('../vendor/fontawesome-free/css/all.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('../vendor/fontawesome-free/css/all.css') }}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-        <link rel = "icon" href ="{{asset('./img/logo.png')}}" type = "image/x-icon">
+    <link rel="icon" href="{{ asset('./img/logo.png') }}" type="image/x-icon">
     <!-- Custom styles for this template -->
-    <link href="{{ asset('./css/sb-admin-2.css')}}" rel="stylesheet">
+    <link href="{{ asset('./css/sb-admin-2.css') }}" rel="stylesheet">
 
     {{-- <link href="{{ asset('./css/profile.css')}}" rel="stylesheet"  > --}}
     <!-- Custom styles for this page -->
-    <link href="{{asset('../vendor/datatables/dataTables.bootstrap4.css')}}" rel="stylesheet">
+    <link href="{{ asset('../vendor/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet">
 
 </head>
 
@@ -48,22 +49,35 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    @if($message = Session::get('success'))
-                    <div class="alert alert-success" role="alert">
-                        {{$message}}
-                      </div>
+                    @if ($message = Session::get('login'))
+                        <div class="alert alert-success" role="alert">
+                            {{ $message }}
+                            <button type="button" class="close" data-dismiss="alert"
+                                aria-label="Close"><span>&times;</span></button>
+                        </div>
                     @endif
-                    @if($message = Session::get('danger'))
-                    <div class="alert alert-danger" role="alert">
-                        {{$message}}
-                      </div>
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{ $message }}
+                            <button type="button" class="close" data-dismiss="alert"
+                                aria-label="Close"><span>&times;</span></button>
+                        </div>
                     @endif
-                    @if($message = Session::get('info'))
-                    <div class="alert alert-info" role="alert">
-                        {{$message}}
-                      </div>
+                    @if ($message = Session::get('danger'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ $message }}
+                            <button type="button" class="close" data-dismiss="alert"
+                                aria-label="Close"><span>&times;</span></button>
+                        </div>
                     @endif
-                    
+                    @if ($message = Session::get('info'))
+                        <div class="alert alert-info" role="alert">
+                            {{ $message }}
+                            <button type="button" class="close" data-dismiss="alert"
+                                aria-label="Close"><span>&times;</span></button>
+                        </div>
+                    @endif
+
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-sec">@yield('headline')</h6>
@@ -73,13 +87,13 @@
                         </div>
                     </div>
                     <!-- DataTales Example -->
-                   @yield('content')
-                <!-- /.container-fluid -->
+                    @yield('content')
+                    <!-- /.container-fluid -->
                 </div>
             </div>
             <!-- End of Main Content -->
 
-          
+
             <!-- End of Footer -->
 
         </div>
@@ -104,7 +118,8 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Pilih "Keluar" di bawah jika Anda siap untuk mengakhiri sesi Anda saat ini.</div>
+                <div class="modal-body">Pilih "Keluar" di bawah jika Anda siap untuk mengakhiri sesi Anda saat ini.
+                </div>
                 <div class="modal-footer">
                     <button class="btn btn-light" type="button" data-dismiss="modal">Cancel</button>
                     <a class="btn btn-sec" href="/logout">Logout</a>
@@ -113,26 +128,28 @@
         </div>
     </div>
 
- 
+
     <!-- Bootstrap core JavaScript-->
-    <script src="{{asset('vendor/jquery/jquery.js')}}"></script>
-    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.js')}}"></script>
+    <script src="{{ asset('vendor/jquery/jquery.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.js') }}"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="{{asset('vendor/jquery-easing/jquery.easing.js')}}"></script>
+    <script src="{{ asset('vendor/jquery-easing/jquery.easing.js') }}"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="{{asset('js/sb-admin-2.js')}}"></script>
+    <script src="{{ asset('js/sb-admin-2.js') }}"></script>
 
-    
+
     <!-- Page level plugins -->
-    <script src="{{asset('vendor/datatables/jquery.dataTables.js')}}"></script>
-    <script src="{{asset('vendor/datatables/dataTables.bootstrap4.js')}}"></script>
+    <script src="{{ asset('vendor/datatables/jquery.dataTables.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.js') }}"></script>
 
     <!-- Page level custom scripts -->
-    <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
+    <script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+        integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
